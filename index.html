@@ -32,8 +32,8 @@
 
                 <nav aria-label="القائمة الرئيسية">
                     <ul class="nav-links">
-                        <li><a href="#about">نبذة مختصرة</a></li>
-                        <li><a href="#hero">عن الطبيب</a></li>
+                        <li><a href="#hero">الصفحة الرئيسية</a></li>
+                        <li><a href="#about">عن الطبيب</a></li>
                         <li><a href="#services">الخدمات والتخصصات</a></li>
                         <li><a href="#tips-section">نصائح لبشرة صحية</a></li>
                         <li><a href="#clinics">العيادات والمواعيد</a></li>
@@ -100,6 +100,58 @@
         </header>
 
         <main>
+            <!-- قسم الترحيب / بطل الصفحة (Hero) -->
+            <section id="hero" class="hero-section">
+                <div class="hero-container">
+                    <div class="hero-content">
+                        <h2 class="hero-title">
+                            عناية طبية متقدمة<br />
+                            تُعيد لبشرتك <span>نضارتها وتألقها الطبيعي</span>
+                        </h2>
+                        <p class="hero-desc">
+                            نقدم في عياداتنا أحدث البروتوكولات العلاجية للأمراض الجلدية وتقنيات الليزر والتجميل غير
+                            الجراحي، مع خطط عناية وقائية مخصصة لكل بشرة.
+                        </p>
+                        <div class="hero-cta-group">
+                            <button type="button" class="btn-booking js-open-booking">
+                                <span>طلب استشارة طبية</span>
+                            </button>
+                            <a href="#tips-section" class="btn-secondary">
+                                <span>استعراض نصائح البشرة</span>
+                            </a>
+                        </div>
+
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <h3>(.......)</h3>
+                                <p>عامًا من الخبرة السريرية</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3>(.......)</h3>
+                                <p>استشارة ومراجعة ناجحة</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3>(.......)</h3>
+                                <p>في طب وجراحة الجلد</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-card-visual">
+                        <div class="doctor-portrait-frame">
+                            <img
+                                src="img/doctor-avatar.png"
+                                alt="د. (.......) - استشاري طب الجلدية والتجميل"
+                                data-fallback="images/tip6.svg"
+                                onerror="this.src=this.getAttribute('data-fallback')" />
+                            <div class="doctor-card-overlay">
+                                <h4>د. (.......)</h4>
+                                <p>استشاري طب وجراحة الجلدية والتجميل - نصائح لبشرة صحية</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section id="about" class="about-section">
                 <div class="section-container">
                     <div class="about-grid">
@@ -122,12 +174,17 @@
                                         <div class="quote-card-layout">
                                             <div class="quote-text-wrap">
                                                 <blockquote class="doctor-quote-text">
-                                                    «أؤمن بأن الرعاية الجلدية المتميزة تبدأ بالاستماع إلى المريض، وفهم احتياجات بشرته، ثم وضع خطة مناسبة تقوم على التقييم العلمي والاهتمام بكل التفاصيل.»
+                                                    «أؤمن بأن الرعاية الجلدية المتميزة تبدأ بالاستماع إلى المريض، وفهم
+                                                    احتياجات بشرته، ثم وضع خطة مناسبة تقوم على التقييم العلمي والاهتمام
+                                                    بكل التفاصيل.»
                                                 </blockquote>
                                                 <div class="quote-doctor-name">نهج طبي يضع احتياجاتك أولًا</div>
                                             </div>
                                             <div class="quote-avatar-wrap">
-                                                <img src="img/doctor-avatar.png" alt="صورة طبيب الجلدية والتجميل" data-fallback="images/tip6.svg" />
+                                                <img
+                                                    src="img/doctor-avatar.png"
+                                                    alt="صورة طبيب الجلدية والتجميل"
+                                                    data-fallback="images/tip6.svg" />
                                             </div>
                                         </div>
                                     </div>
@@ -186,60 +243,6 @@
                     </div>
                 </div>
             </section>
-
-            <!-- قسم الترحيب / بطل الصفحة (Hero) -->
-            <section id="hero" class="hero-section">
-                <div class="hero-container">
-                    <div class="hero-content">
-                        <h2 class="hero-title">
-                            عناية طبية متقدمة<br />
-                            تُعيد لبشرتك <span>نضارتها وتألقها الطبيعي</span>
-                        </h2>
-                        <p class="hero-desc">
-                            نقدم في عياداتنا أحدث البروتوكولات العلاجية للأمراض الجلدية وتقنيات الليزر والتجميل غير
-                            الجراحي، مع خطط عناية وقائية مخصصة لكل بشرة.
-                        </p>
-                        <div class="hero-cta-group">
-                            <button type="button" class="btn-booking js-open-booking">
-                                <span>طلب استشارة طبية</span>
-                            </button>
-                            <a href="#tips-section" class="btn-secondary">
-                                <span>استعراض نصائح البشرة</span>
-                            </a>
-                        </div>
-
-                        <div class="hero-stats">
-                            <div class="stat-item">
-                                <h3>(.......)</h3>
-                                <p>عامًا من الخبرة السريرية</p>
-                            </div>
-                            <div class="stat-item">
-                                <h3>(.......)</h3>
-                                <p>استشارة ومراجعة ناجحة</p>
-                            </div>
-                            <div class="stat-item">
-                                <h3>(.......)</h3>
-                                <p>في طب وجراحة الجلد</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="hero-card-visual">
-                        <div class="doctor-portrait-frame">
-                            <img
-                                src="img/doctor-avatar.png"
-                                alt="د. (.......) - استشاري طب الجلدية والتجميل"
-                                data-fallback="images/tip6.svg"
-                                onerror="this.src=this.getAttribute('data-fallback')" />
-                            <div class="doctor-card-overlay">
-                                <h4>د. (.......)</h4>
-                                <p>استشاري طب وجراحة الجلدية والتجميل - نصائح لبشرة صحية</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             <!-- قسم الخدمات والتخصصات -->
             <section id="services" class="services-section">
                 <div class="section-container">
