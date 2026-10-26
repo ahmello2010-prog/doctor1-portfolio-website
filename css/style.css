@@ -5,26 +5,26 @@
    أيقونات SVG هندسية نقية بالكامل بدون أي إيموجي
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap");
 
 :root {
     /* الوضع الفاتح (Light Mode) */
-    --color-bg: #f9f6f0;               /* عاجي دافئ فاخر */
-    --color-bg-alt: #f1ebde;           /* عاجي ثانوي للأقسام */
-    --color-surface: #ffffff;          /* سطح البطاقات */
+    --color-bg: #f9f6f0; /* عاجي دافئ فاخر */
+    --color-bg-alt: #f1ebde; /* عاجي ثانوي للأقسام */
+    --color-surface: #ffffff; /* سطح البطاقات */
     --color-surface-hover: #fcfbfa;
-    --color-petroleum: #174a50;        /* الأزرق البترولي الأساسي */
-    --color-petroleum-deep: #0f3338;   /* بترولي داكن للرؤوس والفوتر */
-    --color-petroleum-light: #25666f;  /* بترولي أفتح للتفاعل */
-    --color-gold: #c5a059;             /* ذهبي هادئ */
-    --color-gold-light: #ebd8b0;       /* ذهبي فاتح للخلفيات والحدود */
+    --color-petroleum: #174a50; /* الأزرق البترولي الأساسي */
+    --color-petroleum-deep: #0f3338; /* بترولي داكن للرؤوس والفوتر */
+    --color-petroleum-light: #25666f; /* بترولي أفتح للتفاعل */
+    --color-gold: #c5a059; /* ذهبي هادئ */
+    --color-gold-light: #ebd8b0; /* ذهبي فاتح للخلفيات والحدود */
     --color-gold-hover: #b3883b;
-    --color-text-main: #174a50;        /* لون النص الرئيسي */
-    --color-text-muted: #4e6b70;       /* لون النص الثانوي */
+    --color-text-main: #174a50; /* لون النص الرئيسي */
+    --color-text-muted: #4e6b70; /* لون النص الثانوي */
     --color-text-light: #71898e;
     --color-border: rgba(23, 74, 80, 0.12);
     --color-border-gold: rgba(197, 160, 89, 0.35);
-    
+
     --shadow-sm: 0 2px 8px rgba(23, 74, 80, 0.05);
     --shadow-md: 0 8px 24px rgba(23, 74, 80, 0.08);
     --shadow-lg: 0 16px 36px rgba(23, 74, 80, 0.12);
@@ -36,22 +36,22 @@
 
 [data-theme="dark"] {
     /* الوضع الداكن (Dark Mode) */
-    --color-bg: #0b181a;               /* بترولي شديد العمق */
-    --color-bg-alt: #102124;           /* سطح بديل داكن */
-    --color-surface: #152b2f;          /* سطح البطاقات الداكنة */
+    --color-bg: #0b181a; /* بترولي شديد العمق */
+    --color-bg-alt: #102124; /* سطح بديل داكن */
+    --color-surface: #152b2f; /* سطح البطاقات الداكنة */
     --color-surface-hover: #1b353a;
-    --color-petroleum: #7ad1dc;        /* بترولي متوهج ومريح للنصوص الداكنة */
+    --color-petroleum: #7ad1dc; /* بترولي متوهج ومريح للنصوص الداكنة */
     --color-petroleum-deep: #081315;
     --color-petroleum-light: #52b8c4;
-    --color-gold: #d8b46e;             /* ذهبي مشرق مريح بالوضع الداكن */
+    --color-gold: #d8b46e; /* ذهبي مشرق مريح بالوضع الداكن */
     --color-gold-light: rgba(216, 180, 110, 0.2);
     --color-gold-hover: #f0cb85;
-    --color-text-main: #f0f5f5;        /* نص أبيض عاجي ساطع */
-    --color-text-muted: #a6bec1;       /* نص فرعي هادئ */
+    --color-text-main: #f0f5f5; /* نص أبيض عاجي ساطع */
+    --color-text-muted: #a6bec1; /* نص فرعي هادئ */
     --color-text-light: #7c999d;
     --color-border: rgba(122, 209, 220, 0.14);
     --color-border-gold: rgba(216, 180, 110, 0.35);
-    
+
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
     --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
     --shadow-lg: 0 16px 36px rgba(0, 0, 0, 0.55);
@@ -68,13 +68,20 @@ html {
 
 body {
     margin: 0;
-    font-family: 'Tajawal', system-ui, -apple-system, Arial, sans-serif;
+    font-family:
+        "Tajawal",
+        system-ui,
+        -apple-system,
+        Arial,
+        sans-serif;
     background: var(--color-bg);
     color: var(--color-text-main);
     line-height: 1.7;
     direction: rtl;
     text-align: right;
-    transition: background 0.3s ease, color 0.3s ease;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
     overflow-x: hidden;
 }
 
@@ -264,8 +271,7 @@ body {
 
 /* قسم البطل (Hero Section) */
 .hero-section {
-    background: radial-gradient(circle at 20% 30%, rgba(197, 160, 89, 0.08) 0%, transparent 60%),
-                var(--color-bg-alt);
+    background: radial-gradient(circle at 20% 30%, rgba(197, 160, 89, 0.08) 0%, transparent 60%), var(--color-bg-alt);
     border-bottom: 1px solid var(--color-border);
     padding: 70px 24px;
     position: relative;
@@ -386,6 +392,16 @@ body {
     width: 100%;
     height: 440px;
     object-fit: cover;
+    object-position: center bottom;
+    display: block;
+}
+
+.brand-logo-badge img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+    border-radius: 50%;
     display: block;
 }
 
@@ -411,7 +427,7 @@ body {
 .doctor-card-overlay p {
     margin: 4px 0 0;
     font-size: 0.85rem;
-    color: var(--color-gold-light);
+    color: rgba(255, 255, 255, 0.63);
 }
 
 /* الأقسام العامة */
@@ -850,7 +866,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 12px;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.25s ease;
@@ -865,11 +881,14 @@ section {
     background: var(--color-surface);
     color: var(--color-text-main);
     width: 100%;
-    max-width: 520px;
+    max-width: 400px;
+    max-height: calc(100vh - 24px);
+    max-height: calc(100dvh - 24px);
+    overflow-y: auto;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-lg);
     border: 1px solid var(--color-border-gold);
-    padding: 32px;
+    padding: 20px 22px;
     position: relative;
     transform: translateY(20px);
     transition: transform 0.25s ease;
@@ -881,8 +900,8 @@ section {
 
 .modal-close-btn {
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 12px;
+    left: 12px;
     background: none;
     border: none;
     font-size: 1.5rem;
@@ -899,28 +918,39 @@ section {
     color: var(--color-gold);
 }
 
+#modal-title {
+    font-size: 1.1rem !important;
+    margin-bottom: 6px !important;
+}
+
+#modal-content > p {
+    font-size: 0.8rem !important;
+    margin-bottom: 12px !important;
+    line-height: 1.5;
+}
+
 .form-group {
-    margin-bottom: 16px;
+    margin-bottom: 10px;
     text-align: right;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 6px;
-    font-size: 0.9rem;
+    margin-bottom: 4px;
+    font-size: 0.8rem;
     font-weight: 600;
     color: var(--color-text-main);
 }
 
 .form-control {
     width: 100%;
-    padding: 12px 14px;
+    padding: 8px 12px;
     border-radius: var(--radius-sm);
     border: 1px solid var(--color-border);
     background: var(--color-bg);
     color: var(--color-text-main);
     font-family: inherit;
-    font-size: 0.92rem;
+    font-size: 0.85rem;
     outline: none;
     transition: var(--transition);
 }
@@ -934,13 +964,13 @@ section {
     width: 100%;
     background: linear-gradient(135deg, var(--color-gold), #aa8337);
     color: #ffffff;
-    padding: 12px;
+    padding: 10px;
     border-radius: 30px;
     border: none;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 700;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 6px;
     transition: var(--transition);
     font-family: inherit;
 }
@@ -953,11 +983,16 @@ section {
 /* شاشة نجاح الحجز والتواصل الفعلي عبر واتساب والهاتف */
 .booking-success-container {
     text-align: center;
-    padding: 10px 0;
+    padding: 4px 0;
+}
+
+.success-icon-badge svg {
+    width: 36px;
+    height: 36px;
 }
 
 .success-icon-badge {
-    margin-bottom: 16px;
+    margin-bottom: 8px;
     color: var(--color-gold);
     display: flex;
     justify-content: center;
@@ -965,34 +1000,34 @@ section {
 
 .success-title {
     color: var(--color-text-main);
-    margin: 0 0 8px;
-    font-size: 1.3rem;
+    margin: 0 0 6px;
+    font-size: 1.1rem;
 }
 
 .success-subtitle {
     color: var(--color-text-muted);
-    font-size: 0.95rem;
-    margin: 0 0 20px;
+    font-size: 0.82rem;
+    margin: 0 0 12px;
     line-height: 1.6;
 }
 
 .booking-action-cards {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    margin-bottom: 18px;
+    gap: 8px;
+    margin-bottom: 10px;
 }
 
 .btn-action-wa {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 8px;
     background: #128c7e;
     color: #ffffff;
-    padding: 13px 20px;
+    padding: 10px 14px;
     border-radius: 30px;
-    font-size: 0.96rem;
+    font-size: 0.85rem;
     font-weight: 700;
     text-decoration: none;
     box-shadow: 0 4px 14px rgba(18, 140, 126, 0.35);
@@ -1010,12 +1045,12 @@ section {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 8px;
     background: var(--color-surface);
     color: var(--color-text-main);
-    padding: 11px 20px;
+    padding: 9px 14px;
     border-radius: 30px;
-    font-size: 0.92rem;
+    font-size: 0.8rem;
     font-weight: 600;
     text-decoration: none;
     border: 1px solid var(--color-border);
@@ -1028,12 +1063,12 @@ section {
 }
 
 .booking-archive-notice {
-    font-size: 0.8rem;
+    font-size: 0.72rem;
     color: var(--color-text-light);
     background: var(--color-bg);
-    padding: 8px 12px;
+    padding: 6px 10px;
     border-radius: var(--radius-sm);
-    margin-top: 10px;
+    margin-top: 6px;
 }
 
 .booking-archive-notice code {
