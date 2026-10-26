@@ -53,6 +53,45 @@ document.addEventListener("DOMContentLoaded", () => {
     // ----------------------------------------------------------------------
     const filterButtons = document.querySelectorAll(".filter-btn");
     const tipCards = document.querySelectorAll(".tips .card");
+    const tipsCounter = document.querySelector(".tips-counter");
+    const tipsTrack = document.querySelector(".tips");
+    const tipsPrevious = document.querySelector(".tips-prev");
+    const tipsNext = document.querySelector(".tips-next");
+    let selectedTips = Array.from(tipCards);
+    let currentTipIndex = 0;
+
+    function renderTipsCarousel() {
+        const isMobile = window.matchMedia("(max-width: 768px)").matches;
+        tipCards.forEach((card) => card.classList.remove("is-current"));
+
+        if (isMobile) {
+            tipCards.forEach((card) => (card.style.display = "none"));
+            if (selectedTips.length) {
+                const currentCard = selectedTips[currentTipIndex];
+                currentCard.style.display = "flex";
+                currentCard.classList.add("is-current");
+                if (tipsCounter) tipsCounter.textContent = `${currentTipIndex + 1} / ${selectedTips.length}`;
+            } else if (tipsCounter) {
+                tipsCounter.textContent = "0 / 0";
+            }
+        } else {
+            tipCards.forEach((card) => {
+                card.style.display = selectedTips.includes(card) ? "flex" : "none";
+            });
+        }
+    }
+
+    function moveTip(direction) {
+        if (!selectedTips.length) return;
+        if (tipsTrack) tipsTrack.dataset.slideDirection = direction > 0 ? "next" : "previous";
+        currentTipIndex = (currentTipIndex + direction + selectedTips.length) % selectedTips.length;
+        renderTipsCarousel();
+    }
+
+    tipsPrevious?.addEventListener("click", () => moveTip(-1));
+    tipsNext?.addEventListener("click", () => moveTip(1));
+    window.addEventListener("resize", renderTipsCarousel);
+    renderTipsCarousel();
 
     filterButtons.forEach((button) => {
         button.addEventListener("click", () => {
@@ -60,24 +99,102 @@ document.addEventListener("DOMContentLoaded", () => {
             button.classList.add("active");
 
             const filterValue = button.getAttribute("data-filter");
-
-            tipCards.forEach((card) => {
-                const category = card.getAttribute("data-category");
-                if (filterValue === "all" || category === filterValue) {
-                    card.style.display = "flex";
-                    card.style.opacity = "0";
-                    card.style.transform = "translateY(10px)";
-                    setTimeout(() => {
-                        card.style.transition = "opacity 0.3s ease, transform 0.3s ease";
-                        card.style.opacity = "1";
-                        card.style.transform = "translateY(0)";
-                    }, 20);
-                } else {
-                    card.style.display = "none";
-                }
-            });
+            selectedTips = Array.from(tipCards).filter((card) =>
+                filterValue === "all" || card.getAttribute("data-category") === filterValue
+            );
+            currentTipIndex = 0;
+            renderTipsCarousel();
         });
     });
+
+    // تمييز رابط القسم الظاهر في النافبار أثناء التمرير.
+    const sectionLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+    const observedSections = Array.from(sectionLinks)
+        .map((link) => document.querySelector(link.getAttribute("href")))
+        .filter(Boolean);
+
+    if ("IntersectionObserver" in window) {
+        const sectionObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) return;
+                    sectionLinks.forEach((link) => {
+                        const isActive = link.getAttribute("href") === `#${entry.target.id}`;
+                        link.classList.toggle("active", isActive);
+                        if (isActive) link.setAttribute("aria-current", "location");
+                        else link.removeAttribute("aria-current");
+                    });
+                });
+            },
+            { rootMargin: "-25% 0px -60% 0px", threshold: 0 }
+        );
+        observedSections.forEach((section) => sectionObserver.observe(section));
+    }
+
+    // تشغيل بطاقات الخدمات تلقائيًا على الهاتف مع إبقاء التمرير اليدوي متاحًا.
+    const servicesTrack = document.querySelector(".services-grid");
+    const serviceCards = servicesTrack ? Array.from(servicesTrack.querySelectorAll(".service-card")) : [];
+    const servicesCounter = document.querySelector(".services-counter");
+    const servicesPrevious = document.querySelector(".services-prev");
+    const servicesNext = document.querySelector(".services-next");
+    if (servicesTrack && serviceCards.length > 1) {
+        let servicesTimer;
+        let servicesScrollTimer;
+        const isMobileServices = () => window.matchMedia("(max-width: 768px)").matches;
+
+        const getCurrentServiceIndex = () => {
+            const trackRect = servicesTrack.getBoundingClientRect();
+            const trackCenter = trackRect.left + trackRect.width / 2;
+            return serviceCards.reduce((closest, card, index) => {
+                const rect = card.getBoundingClientRect();
+                const distance = Math.abs(rect.left + rect.width / 2 - trackCenter);
+                const closestRect = serviceCards[closest].getBoundingClientRect();
+                const closestDistance = Math.abs(closestRect.left + closestRect.width / 2 - trackCenter);
+                return distance < closestDistance ? index : closest;
+            }, 0);
+        };
+
+        const updateServicesCounter = () => {
+            if (servicesCounter) servicesCounter.textContent = `${getCurrentServiceIndex() + 1} / ${serviceCards.length}`;
+        };
+
+        const goToService = (index) => {
+            const target = serviceCards[(index + serviceCards.length) % serviceCards.length];
+            const trackRect = servicesTrack.getBoundingClientRect();
+            const targetRect = target.getBoundingClientRect();
+            const offset = targetRect.left + targetRect.width / 2 - (trackRect.left + trackRect.width / 2);
+            servicesTrack.scrollBy({ left: offset, behavior: "smooth" });
+            if (servicesCounter) servicesCounter.textContent = `${((index + serviceCards.length) % serviceCards.length) + 1} / ${serviceCards.length}`;
+        };
+
+        const startServicesCarousel = () => {
+            window.clearInterval(servicesTimer);
+            if (!isMobileServices()) return;
+            servicesTimer = window.setInterval(() => {
+                const trackRect = servicesTrack.getBoundingClientRect();
+                if (trackRect.bottom < 0 || trackRect.top > window.innerHeight) return;
+                goToService(getCurrentServiceIndex() + 1);
+            }, 3600);
+        };
+
+        servicesPrevious?.addEventListener("click", () => {
+            goToService(getCurrentServiceIndex() - 1);
+            startServicesCarousel();
+        });
+        servicesNext?.addEventListener("click", () => {
+            goToService(getCurrentServiceIndex() + 1);
+            startServicesCarousel();
+        });
+        servicesTrack.addEventListener("scroll", () => {
+            window.clearTimeout(servicesScrollTimer);
+            servicesScrollTimer = window.setTimeout(updateServicesCounter, 120);
+        }, { passive: true });
+
+        startServicesCarousel();
+        window.addEventListener("resize", startServicesCarousel);
+        servicesTrack.addEventListener("pointerdown", () => window.clearInterval(servicesTimer), { passive: true });
+        servicesTrack.addEventListener("pointerup", startServicesCarousel, { passive: true });
+    }
 
     // ----------------------------------------------------------------------
     // 3. نافذة حجز موعد استشارة وإرسالها الفعلي (WhatsApp & Phone & LocalStorage)
