@@ -2,13 +2,13 @@ const CLINIC_CONFIG = {
     dokki: {
         name: "عيادة الدقي",
         phone: "+201004031635",
-        whatsapp: "01004031635",
+        whatsapp: "201004031635",
         displayPhone: "0100 403 1635"
     },
     faisal: {
         name: "عيادة فيصل",
         phone: "+201107840689",
-        whatsapp: "01107840689",
+        whatsapp: "201107840689",
         displayPhone: "0110 784 0689"
     }
 };
@@ -99,8 +99,8 @@ document.addEventListener("DOMContentLoaded", () => {
             button.classList.add("active");
 
             const filterValue = button.getAttribute("data-filter");
-            selectedTips = Array.from(tipCards).filter((card) =>
-                filterValue === "all" || card.getAttribute("data-category") === filterValue
+            selectedTips = Array.from(tipCards).filter(
+                (card) => filterValue === "all" || card.getAttribute("data-category") === filterValue
             );
             currentTipIndex = 0;
             renderTipsCarousel();
@@ -155,7 +155,8 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         const updateServicesCounter = () => {
-            if (servicesCounter) servicesCounter.textContent = `${getCurrentServiceIndex() + 1} / ${serviceCards.length}`;
+            if (servicesCounter)
+                servicesCounter.textContent = `${getCurrentServiceIndex() + 1} / ${serviceCards.length}`;
         };
 
         const goToService = (index) => {
@@ -164,7 +165,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const targetRect = target.getBoundingClientRect();
             const offset = targetRect.left + targetRect.width / 2 - (trackRect.left + trackRect.width / 2);
             servicesTrack.scrollBy({ left: offset, behavior: "smooth" });
-            if (servicesCounter) servicesCounter.textContent = `${((index + serviceCards.length) % serviceCards.length) + 1} / ${serviceCards.length}`;
+            if (servicesCounter)
+                servicesCounter.textContent = `${((index + serviceCards.length) % serviceCards.length) + 1} / ${serviceCards.length}`;
         };
 
         const startServicesCarousel = () => {
@@ -185,10 +187,14 @@ document.addEventListener("DOMContentLoaded", () => {
             goToService(getCurrentServiceIndex() + 1);
             startServicesCarousel();
         });
-        servicesTrack.addEventListener("scroll", () => {
-            window.clearTimeout(servicesScrollTimer);
-            servicesScrollTimer = window.setTimeout(updateServicesCounter, 120);
-        }, { passive: true });
+        servicesTrack.addEventListener(
+            "scroll",
+            () => {
+                window.clearTimeout(servicesScrollTimer);
+                servicesScrollTimer = window.setTimeout(updateServicesCounter, 120);
+            },
+            { passive: true }
+        );
 
         startServicesCarousel();
         window.addEventListener("resize", startServicesCarousel);
