@@ -32,8 +32,8 @@
 
                 <nav aria-label="القائمة الرئيسية">
                     <ul class="nav-links">
-                        <li><a href="#hero">الرئيسية</a></li>
-                        <li><a href="#about">عن الطبيب</a></li>
+                        <li><a href="#about">نبذة مختصرة</a></li>
+                        <li><a href="#hero">عن الطبيب</a></li>
                         <li><a href="#services">الخدمات والتخصصات</a></li>
                         <li><a href="#tips-section">نصائح لبشرة صحية</a></li>
                         <li><a href="#clinics">العيادات والمواعيد</a></li>
@@ -100,8 +100,101 @@
         </header>
 
         <main>
-            <!-- فراغ فاصل بلون الموقع ليتنفس التصميم بين النافبار وقسم الهيرو -->
-            <div class="hero-breathing-space" aria-hidden="true"></div>
+            <section id="about" class="about-section">
+                <div class="section-container">
+                    <div class="about-grid">
+                        <div class="about-text-col">
+                            <span class="section-tag">نبذة مختصرة عن الطبيب</span>
+
+                            <h2 class="section-title">رعاية جلدية تجمع بين الفهم الطبي والاهتمام بك</h2>
+
+                            <p class="section-desc" style="text-align: right; margin-bottom: 20px">
+                                في طب الجلدية والتجميل، تبدأ الرعاية الجيدة بفهم احتياجات كل بشرة على حدة. يركّز هذا
+                                النهج على تقييم الحالة بعناية، وتوضيح الخيارات المتاحة، واختيار ما يتناسب مع صحة الجلد
+                                والنتائج الواقعية المرجوّة، مع وضع راحة المريض ووضوح المعلومات في مقدمة الاهتمام.
+                            </p>
+
+                            <div class="about-features">
+                                <div class="about-quote-col">
+                                    <div
+                                        class="clinic-card quote-doctor-card"
+                                        style="border-right: 4px solid var(--color-gold)">
+                                        <span class="clinic-badge">مبدأ أساسي في الرعاية</span>
+
+                                        <div class="quote-card-layout">
+                                            <div class="quote-text-wrap">
+                                                <blockquote class="doctor-quote-text">
+                                                    «كل بشرة لها احتياجاتها الخاصة؛ لذلك تبدأ العناية الصحيحة بالفهم
+                                                    والتقييم، ثم اختيار ما يناسب الحالة بوضوح وواقعية.»
+                                                </blockquote>
+
+                                                <div class="quote-doctor-name">رعاية تراعي احتياجاتك</div>
+                                            </div>
+
+                                            <div class="quote-avatar-wrap">
+                                                <img
+                                                    src="img/doctor-avatar.png"
+                                                    alt="صورة طبيب الجلدية والتجميل"
+                                                    data-fallback="images/tip6.svg"
+                                                    onerror="this.src=this.getAttribute('data-fallback')" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="about-feature-item">
+                                    <div class="feature-icon-badge">
+                                        <svg
+                                            width="22"
+                                            height="22"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            aria-hidden="true">
+                                            <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                                            <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                                        </svg>
+                                    </div>
+
+                                    <div class="feature-info">
+                                        <h4>فهم احتياجات البشرة</h4>
+                                        <p>تقييم طبيعة الحالة قبل مناقشة الخيارات المناسبة للعناية والعلاج.</p>
+                                    </div>
+                                </div>
+
+                                <div class="about-feature-item">
+                                    <div class="feature-icon-badge">
+                                        <svg
+                                            width="22"
+                                            height="22"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            aria-hidden="true">
+                                            <path d="M6 18h8" />
+                                            <path d="M3 22h18" />
+                                            <path d="M14 22a7 7 0 1 0 0-14h-1" />
+                                            <path d="M9 14h2" />
+                                            <path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z" />
+                                            <path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3" />
+                                        </svg>
+                                    </div>
+
+                                    <div class="feature-info">
+                                        <h4>توازن بين الصحة والجمال</h4>
+                                        <p>الاهتمام بصحة الجلد ومظهره مع مراعاة طبيعة كل حالة وتوقعاتها.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <!-- قسم الترحيب / بطل الصفحة (Hero) -->
             <section id="hero" class="hero-section">
@@ -121,20 +214,6 @@
                             </button>
                             <a href="#tips-section" class="btn-secondary">
                                 <span>استعراض نصائح البشرة</span>
-                                <svg
-                                    class="ui-icon"
-                                    width="16"
-                                    height="16"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="2.2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    aria-hidden="true">
-                                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                                    <polyline points="19 12 12 19 5 12"></polyline>
-                                </svg>
                             </a>
                         </div>
 
@@ -164,96 +243,6 @@
                             <div class="doctor-card-overlay">
                                 <h4>د. (.......)</h4>
                                 <p>استشاري طب وجراحة الجلدية والتجميل - نصائح لبشرة صحية</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- قسم نبذة عن الطبيب -->
-            <section id="about" class="about-section">
-                <div class="section-container">
-                    <div class="about-grid">
-                        <div class="about-text-col">
-                            <span class="section-tag">مسيرة مهنية ورؤية علمية</span>
-                            <h2 class="section-title">فلسفتنا: الجمال الحقيقي يبدأ من صحة الجلد</h2>
-                            <p class="section-desc" style="text-align: right; margin-bottom: 20px">
-                                نؤمن بأن كل بشرة تمتلك طبيعتها وخصائصها الفريدة. هدفنا ليس مجرد تقديم حلول مؤقتة، بل
-                                صياغة خطة علاجية متكاملة تعالج المسببات الجذرية وتعزز حيوية أنسجة الجلد بأمان ودقة علمية
-                                فائقة.
-                            </p>
-                            <div class="about-features">
-                                <div class="about-feature-item">
-                                    <div class="feature-icon-badge">
-                                        <svg
-                                            width="22"
-                                            height="22"
-                                            viewBox="0 0 24 24"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            stroke-width="2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            aria-hidden="true">
-                                            <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-                                            <path d="M6 12v5c3 3 9 3 12 0v-5" />
-                                        </svg>
-                                    </div>
-                                    <div class="feature-info">
-                                        <h4>مؤهلات وأبحاث دولية</h4>
-                                        <p>(.......)</p>
-                                    </div>
-                                </div>
-                                <div class="about-feature-item">
-                                    <div class="feature-icon-badge">
-                                        <svg
-                                            width="22"
-                                            height="22"
-                                            viewBox="0 0 24 24"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            stroke-width="2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            aria-hidden="true">
-                                            <path d="M6 18h8" />
-                                            <path d="M3 22h18" />
-                                            <path d="M14 22a7 7 0 1 0 0-14h-1" />
-                                            <path d="M9 14h2" />
-                                            <path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z" />
-                                            <path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3" />
-                                        </svg>
-                                    </div>
-                                    <div class="feature-info">
-                                        <h4>أحدث تقنيات الليزر والعلاج الضوئي</h4>
-                                        <p>أجهزة معتمدة من (.......) لتحقيق نتائج آمنة وسريعة التعافي.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="about-quote-col">
-                            <div
-                                class="clinic-card quote-doctor-card"
-                                style="border-right: 4px solid var(--color-gold)">
-                                <span class="clinic-badge">رسالة الطبيب لمرضاه</span>
-                                <div class="quote-card-layout">
-                                    <div class="quote-text-wrap">
-                                        <blockquote class="doctor-quote-text">
-                                            «العناية بالبشرة ليست رفاهية ثانوية أو صيحة عابرة، بل هي استثمار وقائي في
-                                            صحة أكبر عضو في جسم الإنسان. تبدأ النتائج الملموسة دائمًا بفهم احتياجات
-                                            الجلد واحترام توازنه الحيوي.»
-                                        </blockquote>
-                                        <div class="quote-doctor-name">— د. (.......)</div>
-                                    </div>
-                                    <div class="quote-avatar-wrap">
-                                        <img
-                                            src="img/doctor-avatar.png"
-                                            alt="د. (.......)"
-                                            data-fallback="images/tip6.svg"
-                                            onerror="this.src=this.getAttribute('data-fallback')" />
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -796,6 +785,6 @@
         </button>
 
         <!-- السكريبت التفاعلي -->
-        <script src="js/script.js"></script>
+        <script type="module" src="js/script.js"></script>
     </body>
 </html>

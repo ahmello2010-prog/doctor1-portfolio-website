@@ -343,9 +343,7 @@ body {
 /* قسم البطل (Hero Section) مع تراكب داكن فخم موحد في الوضعين الفاتح والداكن */
 .hero-section {
     background-color: #0b181a;
-    background-image:
-        var(--hero-overlay),
-        var(--hero-bg-image);
+    background-image: var(--hero-overlay), var(--hero-bg-image);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -1275,16 +1273,6 @@ footer {
     color: rgba(255, 255, 255, 0.6);
 }
 
-/* ==========================================================================
-   التجاوب مع الشاشات والناف بار المستهدف بدقة (Responsive Rules)
-   في الشاشات الأقل من عرض الكمبيوتر:
-   - الاستغناء عن عناصر الناف بار الطويلة
-   - إبقاء اسم الطبيب فقط دون الوصف الطويل
-   - إبقاء زر حجز موعد
-   - إبقاء زر تبديل الوضع (Dark/Light)
-   - بدون أي تزاحم في الحروف أو التفاف للسطر
-   ========================================================================== */
-
 @media (max-width: 1024px) {
     /* إلغاء الروابط الطويلة في الناف بار */
     .nav-links {
@@ -1407,6 +1395,9 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .hero-stats {
+        display: none;
+    }
     .header-inner {
         padding: 12px 16px;
         gap: 12px;
@@ -1574,5 +1565,117 @@ footer {
     .doctor-quote-text {
         font-size: 0.79rem;
         line-height: 1.5;
+    }
+}
+
+/* تحسينات إضافية لصفحة الموبايل دون تغيير ألوان الهوية */
+@media (max-width: 768px) {
+    /* مراعاة المنطقة الآمنة أعلى الشاشة مع الحفاظ على استقامة عناصر الهيدر */
+    .site-header {
+        padding-top: max(8px, env(safe-area-inset-top, 0px));
+    }
+
+    .header-inner,
+    .header-actions {
+        align-items: center;
+    }
+
+    .header-actions > .btn-booking {
+        min-height: 40px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    /* طبقة منفصلة للخلفية تتيح تغبيش الصورة دون التأثير على النص والأزرار */
+    .hero-section {
+        isolation: isolate;
+        overflow: hidden;
+        background-image: none;
+        padding: 44px 18px 46px;
+    }
+
+    .hero-section::before {
+        content: "";
+        position: absolute;
+        inset: -8px;
+        z-index: 0;
+        pointer-events: none;
+        background-image: var(--hero-overlay), var(--hero-bg-mobile), var(--hero-bg-image);
+        background-size: cover;
+        background-position: center top;
+        background-repeat: no-repeat;
+        filter: blur(2px);
+        transform: scale(1.02);
+    }
+
+    .hero-section > .hero-container {
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 42rem;
+    }
+
+    .hero-title {
+        margin-bottom: 22px;
+        font-size: clamp(1.9rem, 7.2vw, 2.55rem);
+        line-height: 1.38;
+    }
+
+    .hero-desc {
+        max-width: 36rem;
+        margin: 0 auto 30px;
+        padding-inline: clamp(10px, 3.5vw, 24px);
+        font-size: clamp(1.05rem, 4.5vw, 1.2rem);
+        line-height: 1.9;
+    }
+
+    .hero-cta-group {
+        justify-content: center;
+        gap: 14px;
+        margin-bottom: 34px;
+    }
+
+    /* ارتفاع لمس مريح وحشو أوضح لزري الاستشارة واستعراض النصائح */
+    .hero-cta-group > .btn-booking,
+    .hero-cta-group > .btn-secondary {
+        min-height: 48px;
+        padding: 12px 20px;
+        justify-content: center;
+    }
+
+    .hero-cta-group .btn-secondary .ui-icon {
+        flex-shrink: 0;
+        margin-inline-start: 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-actions > .btn-booking {
+        padding: 9px 14px;
+    }
+
+    .header-actions > .theme-toggle-btn {
+        width: 38px;
+        height: 38px;
+    }
+
+    .hero-section {
+        padding-inline: 16px;
+    }
+
+    .hero-title {
+        font-size: clamp(1.85rem, 7.5vw, 2.3rem);
+    }
+
+    .hero-cta-group {
+        gap: 12px;
+    }
+
+    .hero-cta-group > .btn-booking,
+    .hero-cta-group > .btn-secondary {
+        padding-inline: 16px;
     }
 }
