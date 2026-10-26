@@ -100,6 +100,9 @@
         </header>
 
         <main>
+            <!-- فراغ فاصل بلون الموقع ليتنفس التصميم بين النافبار وقسم الهيرو -->
+            <div class="hero-breathing-space" aria-hidden="true"></div>
+
             <!-- قسم الترحيب / بطل الصفحة (Hero) -->
             <section id="hero" class="hero-section">
                 <div class="hero-container">
@@ -242,22 +245,26 @@
                         </div>
 
                         <div class="about-quote-col">
-                            <div class="clinic-card" style="border-right: 4px solid var(--color-gold)">
+                            <div class="clinic-card quote-doctor-card" style="border-right: 4px solid var(--color-gold)">
                                 <span class="clinic-badge">رسالة الطبيب لمرضاه</span>
-                                <blockquote
-                                    style="
-                                        margin: 0;
-                                        font-size: 1.15rem;
-                                        line-height: 1.8;
-                                        color: var(--color-text-main);
-                                        font-style: normal;
-                                    ">
-                                    «العناية بالبشرة ليست رفاهية ثانوية أو صيحة عابرة، بل هي استثمار وقائي في صحة أكبر
-                                    عضو في جسم الإنسان. تبدأ النتائج الملموسة دائمًا بفهم احتياجات الجلد واحترام توازنه
-                                    الحيوي.»
-                                </blockquote>
-                                <div style="margin-top: 20px; font-weight: 700; color: var(--color-gold)">
-                                    — د. (.......)
+                                <div class="quote-card-layout">
+                                    <div class="quote-text-wrap">
+                                        <blockquote class="doctor-quote-text">
+                                            «العناية بالبشرة ليست رفاهية ثانوية أو صيحة عابرة، بل هي استثمار وقائي في صحة أكبر
+                                            عضو في جسم الإنسان. تبدأ النتائج الملموسة دائمًا بفهم احتياجات الجلد واحترام توازنه
+                                            الحيوي.»
+                                        </blockquote>
+                                        <div class="quote-doctor-name">
+                                            — د. (.......)
+                                        </div>
+                                    </div>
+                                    <div class="quote-avatar-wrap">
+                                        <img
+                                            src="img/doctor-avatar.png"
+                                            alt="د. (.......)"
+                                            data-fallback="images/tip6.svg"
+                                            onerror="this.src=this.getAttribute('data-fallback')" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -777,6 +784,28 @@
                 </div>
             </div>
         </footer>
+
+        <!-- زر عائم للعودة إلى أعلى الصفحة -->
+        <button
+            type="button"
+            id="backToTopBtn"
+            class="back-to-top-btn"
+            aria-label="العودة إلى أعلى الصفحة"
+            title="العودة إلى أعلى الصفحة">
+            <svg
+                class="ui-icon"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true">
+                <polyline points="18 15 12 9 6 15"></polyline>
+            </svg>
+        </button>
 
         <!-- السكريبت التفاعلي -->
         <script src="js/script.js"></script>

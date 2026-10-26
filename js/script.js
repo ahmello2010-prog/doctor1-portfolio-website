@@ -241,4 +241,29 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
+
+    // ----------------------------------------------------------------------
+    // 5. زر عائم للعودة إلى أعلى الصفحة بسلاسة
+    // ----------------------------------------------------------------------
+    const backToTopBtn = document.getElementById("backToTopBtn");
+    if (backToTopBtn) {
+        window.addEventListener(
+            "scroll",
+            () => {
+                if (window.scrollY > 300) {
+                    backToTopBtn.classList.add("is-visible");
+                } else {
+                    backToTopBtn.classList.remove("is-visible");
+                }
+            },
+            { passive: true }
+        );
+
+        backToTopBtn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    }
 });
