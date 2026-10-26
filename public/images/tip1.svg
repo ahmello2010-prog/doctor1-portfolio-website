@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#174a50"/>
+      <stop offset="100%" stop-color="#0d2c30"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="70%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#e8c37d" stop-opacity="0.8"/>
+      <stop offset="60%" stop-color="#c5a059" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#174a50" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg1)"/>
+  <rect width="800" height="500" fill="url(#sun)"/>
+  <circle cx="560" cy="150" r="85" fill="#f4db9b" opacity="0.3"/>
+  <circle cx="560" cy="150" r="50" fill="#f4db9b" opacity="0.85"/>
+  <!-- Sun Rays & Shield Icon -->
+  <g transform="translate(320, 130) scale(1.6)" stroke="#f4db9b" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M50 15 L80 30 V65 C80 90 50 110 50 110 C50 110 20 90 20 65 V30 Z" fill="#174a50" fill-opacity="0.75" stroke="#e8c37d" stroke-width="3"/>
+    <path d="M50 40 V85" stroke="#e8c37d" stroke-width="3"/>
+    <path d="M35 55 L50 40 L65 55" stroke="#e8c37d" stroke-width="3"/>
+  </g>
+  <text x="400" y="380" font-family="'Tajawal', Arial, sans-serif" font-size="28" font-weight="700" fill="#fcf9f2" text-anchor="middle">الحماية من أشعة الشمس</text>
+  <text x="400" y="420" font-family="'Tajawal', Arial, sans-serif" font-size="18" fill="#c5a059" text-anchor="middle">SPF 50+ • حماية واسعة الطيف</text>
+</svg>

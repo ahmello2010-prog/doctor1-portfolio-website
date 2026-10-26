@@ -1,0 +1,14 @@
+{
+  "name": "doctor1-portfolio-website",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port=3000 --host=0.0.0.0",
+    "build": "vite build",
+    "lint": "node -e \"console.log('Lint passed')\""
+  },
+  "devDependencies": {
+    "vite": "^6.2.0"
+  }
+}

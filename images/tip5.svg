@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18484f"/>
+      <stop offset="100%" stop-color="#0c2528"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg5)"/>
+  <!-- Scalp and Follicle Health icon -->
+  <g transform="translate(330, 100) scale(1.6)" stroke="#f4db9b" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20 90 Q45 30 50 15 Q55 30 80 90" stroke="#e8c37d" stroke-width="3"/>
+    <path d="M35 90 Q48 50 50 35 Q52 50 65 90" stroke="#fcf9f2" stroke-width="2" opacity="0.8"/>
+    <circle cx="50" cy="100" r="12" fill="#c5a059" stroke="#f4db9b" stroke-width="2.5"/>
+  </g>
+  <text x="400" y="380" font-family="'Tajawal', Arial, sans-serif" font-size="28" font-weight="700" fill="#fcf9f2" text-anchor="middle">صحة فروة الرأس والشعر</text>
+  <text x="400" y="420" font-family="'Tajawal', Arial, sans-serif" font-size="18" fill="#c5a059" text-anchor="middle">توازن الدهون وتغذية البصيلات</text>
+</svg>

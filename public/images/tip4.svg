@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#164349"/>
+      <stop offset="100%" stop-color="#0e292d"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg4)"/>
+  <!-- Targeted Care Dropper / Serum Pipette -->
+  <g transform="translate(340, 100) scale(1.6)" stroke="#f4db9b" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="35" y="20" width="20" height="15" rx="4" fill="#c5a059" stroke="#f4db9b"/>
+    <path d="M40 35 V85 L45 98 L50 85 V35" fill="#20555d" fill-opacity="0.7" stroke="#f4db9b" stroke-width="2.5"/>
+    <circle cx="45" cy="115" r="4" fill="#f4db9b"/>
+  </g>
+  <text x="400" y="380" font-family="'Tajawal', Arial, sans-serif" font-size="28" font-weight="700" fill="#fcf9f2" text-anchor="middle">التعامل السليم مع حب الشباب</text>
+  <text x="400" y="420" font-family="'Tajawal', Arial, sans-serif" font-size="18" fill="#c5a059" text-anchor="middle">علاج هادئ يمنع التصبغات والندوب</text>
+</svg>
